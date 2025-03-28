@@ -1,0 +1,20 @@
+services:
+  angular-ui:
+    container_name: angular-ui
+    image: angular-ui
+    build:
+      context: .
+      args:
+        ANGULAR_ENV: production
+      dockerfile: ./Dockerfile
+      target: production
+    ports:
+      - 9080:80
+    environment:
+      ENV_TO_REPLACE_FOO: "from docker-compose.yml"
+    networks:
+      - thenetwork
+
+networks:
+  thenetwork:
+    driver: bridge

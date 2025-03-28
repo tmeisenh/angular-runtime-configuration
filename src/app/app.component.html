@@ -1,0 +1,18 @@
+<style>
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+</style>
+
+<main class="main">
+  <pre>process.env.FOO is dynamically "{{ this.myValue || "not set" }}"</pre>
+</main>
+
+<router-outlet />
